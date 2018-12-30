@@ -1,0 +1,86 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[titlepage]{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{pdflscape} % Allow us to make certain pages in landscape orientation
+\usepackage{amsmath} % Allow multiple line equations
+\usepackage{amssymb}
+\usepackage{scrextend}
+\usepackage{xcolor}
+\usepackage{listings} 
+\usepackage{dirtree}
+\usepackage[numbers]{natbib} 
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{}
+\chead{Chassis Controller Manual}
+\rhead{}
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT STRUCTURE COMMANDS
+%----------------------------------------------------------------------------------------
+
+\setcounter{secnumdepth}{0} % Removes default section numbers
+   
+%----------------------------------------------------------------------------------------
+%	NAME AND CLASS SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\Title}{Python Implementation Manual} % Assignment title
+\newcommand{\DueDate}{30 December 2018} % Due date
+\newcommand{\Class}{Chassis Controller} % Course/class
+\newcommand{\AuthorName}{QUT Motorsport} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+\vspace{2in}
+\textmd{\huge\textbf{\Class}}\\
+\textmd{{\Title}}\\
+\vspace{3in}
+\textmd{{\AuthorName}}
+}
+\author{}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\clearpage
+
+%----------------------------------------------------------------------------------------
+%	INSTALLATION
+%----------------------------------------------------------------------------------------
+\section{Installation}
+
+\clearpage
+
+\end{document}
