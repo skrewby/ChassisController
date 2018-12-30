@@ -1,0 +1,40 @@
+%----------------------------------------------------------------------------------------
+%	INSTALLATION
+%----------------------------------------------------------------------------------------
+
+This program can be run on any Linux distribution that supports SocketCAN. This may change in the future when specific RaspberryPi code is added. It's recommended that this program in run on a virtual machine to avoid polluting a daily workstation. 
+\\
+\\
+The initial step is to clone the GitHub repository with the following command:
+\begin{lstlisting}[language=bash]
+git clone https://github.com/pedrohva/ChassisController.git
+\end{lstlisting}
+For prototyping, a virtual CAN is setup containing three buses. This emulates the three physical CAN buses present in the vehicle. This virtual network can be set up with the following commands:
+\begin{lstlisting}[language=bash]
+cd ChassisController
+sudo ./setup_CAN.sh
+\end{lstlisting}
+It's necessary to run the script with sudo in order to install the can-utils package and to set up the interfaces used by the virtual CAN buses.
+\newline
+To test if the  network was successfully created, use the commands:
+\begin{lstlisting}[language=bash]
+candump -L vcan0
+cansend vcan0 123#DEADBEEF
+\end{lstlisting}
+Figure \ref{fig:can-test} shows the different IDs and messages that can be sent through the network. 
+\begin{figure} [!ht]
+	\centering
+	\includegraphics[width=1\textwidth]{manual-src/images/can_test} 
+	\caption{Communicating using the virtual CAN through the terminal}
+	\label{fig:can-test} 
+\end{figure}
+\\
+To remove the CAN ports, the script can be run again with the argument -r:
+\begin{lstlisting}[language=bash]
+sudo ./setup_CAN.sh -r
+\end{lstlisting}
+The Chassis Controller can then be run on its normal operation mode by executing the Python script \emph{normal-operation.py}.
+\begin{lstlisting}[language=bash]
+python3 normal-operation.py
+\end{lstlisting}
+It might be useful to use a Python virtual environment. More information about setting it up can be found \href{https://docs.python.org/3.7/tutorial/venv.html}{here}.
